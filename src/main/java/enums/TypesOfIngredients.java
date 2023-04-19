@@ -1,6 +1,6 @@
 package enums;
 
-public enum IngredientType {
+public enum TypesOfIngredients {
     Milk,
     Beans,
     Water

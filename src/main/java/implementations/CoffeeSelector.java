@@ -1,18 +1,18 @@
 package implementations;
 
-import interfaces.ICoffeeStrategy;
+import interfaces.ISelectCoffee;
 
 import java.util.Objects;
 
-public class CoffeeContext {
-    private ICoffeeStrategy coffeeStrategy;
+public class CoffeeSelector {
+    private ISelectCoffee coffeeStrategy;
     void setStrategy(String coffeeType){
         if(Objects.equals(coffeeType , "Latte")){
-            coffeeStrategy = new LatteStrategy();
+            coffeeStrategy = new Latte();
         } else if (Objects.equals(coffeeType , "Cappuccino")) {
-            coffeeStrategy = new CappuccinoStrategy();
+            coffeeStrategy = new Cappuccino();
         }else {
-            coffeeStrategy = new EspressoStrategy();
+            coffeeStrategy = new Espresso();
         }
     }
 

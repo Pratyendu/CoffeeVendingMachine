@@ -1,27 +1,27 @@
 package implementations;
 
-import enums.IngredientType;
-import interfaces.IIngredientFiller;
+import enums.TypesOfIngredients;
+import interfaces.IDispenseIngredients;
 
 import java.util.Map;
 
 public class CoffeeMachine {
-    private IIngredientFiller ingredientFiller;
+    private IDispenseIngredients ingredientFiller;
 
-    private CoffeeContext coffeeContext;
+    private CoffeeSelector coffeeSelector;
 
     public CoffeeMachine(){
-        ingredientFiller = new CoffeeIngredientFiller();
-        coffeeContext = new CoffeeContext();
+        ingredientFiller = new DispenseIngredients();
+        coffeeSelector = new CoffeeSelector();
     }
 
-    void buyCoffee(String type){
-        coffeeContext.setStrategy(type);
-        coffeeContext.buy();
+     public void buyCoffee(String type){
+        coffeeSelector.setStrategy(type);
+        coffeeSelector.buy();
     }
 
-    void fillIngredients(Map<IngredientType , Float> ingredients){
-        for (Map.Entry<IngredientType , Float> entrySet : ingredients.entrySet()){
+     public void fillIngredients(Map<TypesOfIngredients, Float> ingredients){
+        for (Map.Entry<TypesOfIngredients, Float> entrySet : ingredients.entrySet()){
             ingredientFiller.fill(entrySet.getKey() , entrySet.getValue());
         }
     }

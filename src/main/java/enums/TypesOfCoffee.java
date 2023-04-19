@@ -1,6 +1,6 @@
 package enums;
 
-public enum CoffeeType {
+public enum TypesOfCoffee {
     Espresso ,
     Latte ,
     Cappuccino

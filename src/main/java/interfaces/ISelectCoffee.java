@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface ICoffeeStrategy {
+public interface ISelectCoffee {
     void createCoffee();
 
     boolean checkIngredient();
